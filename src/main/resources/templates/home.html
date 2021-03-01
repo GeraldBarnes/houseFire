@@ -1,0 +1,61 @@
+<html lang="en-GB" xmlns="http://www.w3.org/1999/xhtml" xmlns:th = "http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>HouseFire</title>
+<link rel="stylesheet" href="styles.css" type="text/css"/>
+</head>
+<body>
+  <div  class="header">
+      <div th:inline="text">
+            <p th:text="${user.firstName}"/>
+            <p th:text="${user.lastName}"/>
+        </div>    
+    <h1>HouseFire</h1>
+  <form th:action = "@{/logout}" method = "post">
+         <input type = "submit" value = "Sign Out" class = "button"/>
+  </form>
+  </div>
+  <div class="navbar">
+      
+  <ul style="list-style-type: none;">
+    <li><a href="home" class="active">Home</a></li>
+    <li><a href="friends.html">Friends</a></li>
+  </ul>
+  </div>
+  <div  class="row">
+    <div class="main">
+      <form method="post" th:action="@{/upload}" enctype="multipart/form-data">
+                    <div class="form-group">
+                        <input type="file" name="file" class="form-control-file"/>
+                    </div>
+                    <button type="submit" class = "button">Upload File</button>
+      </form>
+      <span><img id="si" src="${user.path}" alt="profile image" height="50%" width="50%"/></span>
+      <h1>About</h1>
+      <p>I am a Java Developer with two years experience.  Unfortunately I had to move to South Korea and put my career on hold, after my wife gave birth to our beautiful daughter. I am now looking to return and put all my effort and hard work into getting back on track. I have maintained my skills while I have been away and I would like the chance to prove it. I have experience in industry with many different technologies  including SQL and Java that you have mentioned and I have personal experience with Python.</p>
+    
+    <form action="#" th:action="@{/message}" th:object="${messageEntity}"  method="post">
+      <label >message feed:</label><br/>
+      <input type="text" th:field="*{blurb}" /><br/><br/>
+      <input type="submit" value="Submit" class="button"/>
+    </form>
+	</div>
+      </div>
+<div class="messages" th:if="${not #lists.isEmpty(messages)}">
+    <h2>messages</h2>
+    <table class="table table-striped">
+        <tr th:each="message : ${messages}">
+            <td th:text="${message.blurb}"></td>
+        </tr>
+    </table>
+</div>
+  <div class="footer">
+    <ul style="list-style-type: none;">
+      <li><a href="">Sitemap</a></li> 
+      <li><a href="">Cookie Information</a></li>
+      <li><a href="">Website Policy</a></li>
+    </ul>
+  </div>
+</body>
+</html>

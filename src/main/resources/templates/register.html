@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html lang="en-GB" xmlns="http://www.w3.org/1999/xhtml" xmlns:th = "http://www.thymeleaf.org">
+    <head>
+        <title>Sign Up</title>
+        <meta charset="UTF-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    </head>
+    <body>
+        <form th:action="@{/signup}" th:object="${personEntity}"  method="post">
+        <div>
+            <label> First Name : <input type = "text" th:field="*{FIRSTNAME}"/> </label>
+        </div>
+        <div>
+            <label> Surname : <input type = "text" th:field="*{LASTNAME}"/> </label>
+        </div>
+        <div>
+            <label> Password: <input type = "password" th:field="*{PASSWORD}"/> </label>
+        </div>
+        <div>
+            <label> Email: <input type = "text" th:field="*{EMAIL}"/> </label>
+        </div>
+        <div>
+            <input type = "submit" value = "Register"/>
+        </div>
+        </form>
+    </body>
+</html>
