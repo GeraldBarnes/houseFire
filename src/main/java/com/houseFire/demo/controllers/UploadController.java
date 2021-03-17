@@ -24,7 +24,6 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 public class UploadController {
     @Autowired
     PersonServiceImpl personService;
-    private final String UPLOAD_DIR = "./uploads/";
 
 
     @PostMapping("/upload")
