@@ -9,7 +9,6 @@ import com.houseFire.demo.Interface.MessageRepository;
 import com.houseFire.demo.Interface.MessageService;
 import com.houseFire.demo.entities.MessageEntity;
 import java.util.ArrayList;
-import java.util.Collection;
 import java.util.Collections;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;

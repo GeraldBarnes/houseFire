@@ -11,7 +11,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import java.nio.file.Path;
+import javax.persistence.Transient;
 
 
 /**
@@ -36,14 +36,21 @@ public class PersonEntity {
     
     Timestamp created;
     
-    String path;
+    String photoPath;
 
-    public String getPath() {
-        return path;
+    public String getPhotoPath() {
+        return photoPath;
     }
 
-    public void setPath(String path) {
-        this.path = path;
+    public void setPhotoPath(String photoPath) {
+        this.photoPath = photoPath;
+    }
+    
+    @Transient
+    public String getPhotosImagePath() {
+        if (photoPath == null || ID == null) return null;
+         
+        return "/user-photos/" + ID + "/" + photoPath;
     }
     
     public void setID(Integer ID) {

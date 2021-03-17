@@ -26,7 +26,6 @@ public class PersonController{
     @PostMapping(path="/signup")
     public String PersonController(@ModelAttribute PersonEntity personEntity) {
         repository.save(personServiceImpl.registerNewPersonAccount(personEntity));
-       // login();
         return "redirect:/home";
     }
     

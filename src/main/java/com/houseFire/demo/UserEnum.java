@@ -18,7 +18,6 @@ public final class UserEnum {
     private PersonEntity user;
  
     private UserEnum() {
-   //     this.user = user;
     }
  
     public static UserEnum getInstance() {

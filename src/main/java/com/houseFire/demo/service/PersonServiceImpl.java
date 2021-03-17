@@ -12,9 +12,6 @@ import java.sql.Timestamp;
 import java.util.Date;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.oauth2.core.oidc.user.OidcUser;
-//import org.springframework.beans.factory.annotation.Autowired;
-//import org.springframework.security.crypto.password.NoOpPasswordEncoder;
-//import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 /**
  *
@@ -59,8 +56,4 @@ public class PersonServiceImpl implements PersonService{
       return mainUser;
   }
   
-//     @Bean 
-//    public PasswordEncoder passwordEncoder() { 
-//        return new PasswordEncoder(); 
-//    }
 }
